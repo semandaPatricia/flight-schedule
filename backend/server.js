@@ -10,15 +10,14 @@ const PORT =4000
 
 app.get('/flights', (req, res) => {
     
-     const options = {
-          method: 'GET',
-          url: 'https://flight-data4.p.rapidapi.com/get_airline_flights',
-          params: {airline: 'SIA'},
-          headers: {
-            'X-RapidAPI-Key':  process.env.RAPID_API_KEY,
-            'X-RapidAPI-Host': 'flight-data4.p.rapidapi.com'
-          }
-        };
+  const options = {
+    method: 'GET',
+    url: 'https://toronto-pearson-airport.p.rapidapi.com/arrivals/carousel/9',
+    headers: {
+      'X-RapidAPI-Key': process.env.RAPID_API_KEY,
+      'X-RapidAPI-Host': 'toronto-pearson-airport.p.rapidapi.com'
+    }
+  };
         
 
      axios.request(options).then(function (response) {
